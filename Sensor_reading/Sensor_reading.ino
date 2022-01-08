@@ -1,20 +1,13 @@
 #define pin_soilMoisture A0
 #define pin_LDR A1
+#define pin_waterLevel A2
 
-unsigned long delayEnvio;
+
 int valor_soilMoisture;
 int valor_LDR;
+int valor_waterLevel;
 
-/*
-void Read_soilMoisture(){
-  Serial.println("Leitura Sensor de umidade");
-  if( (millis() - delayEnvio) > 50){
-    Serial.println(analogRead(pin_soilMoisture));
-    delayEnvio = millis();
-  } 
-}
 
-*/
 void setup() {
   Serial.begin(9600);
   pinMode(pin_soilMoisture, INPUT);
@@ -24,6 +17,7 @@ void setup() {
 void loop() {
   Read_LDR();
   Read_soilMoisture();
+  Read_waterLevel();
   
   delay(2000);
 
@@ -44,4 +38,10 @@ void Read_soilMoisture(){
   Serial.println(valor_soilMoisture);
   delay(5000);
 }
-  
+
+void Read_waterLevel(){
+  Serial.println("Leitura Sensor de agua");
+  valor_waterLevel = analogRead(valor_waterLevel);
+  Serial.println(valor_waterLevel);
+  delay(5000);
+}
