@@ -1,0 +1,7 @@
+{
+  "name": "petala-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
