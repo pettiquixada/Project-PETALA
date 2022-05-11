@@ -1,6 +1,7 @@
 import React from "react";
-import HomeScreen from "./pages/home";
 import CssBaseline from "@mui/material/CssBaseline";
+
+import HomeScreen from "./pages/home/";
 
 const App = () => {
     return (
