@@ -7,6 +7,7 @@ import {
     Tooltip,
     ListItemIcon,
     Badge,
+    Container,
 } from "@mui/material";
 import { FaBell } from "react-icons/fa";
 
@@ -14,6 +15,7 @@ import NavMenu from "../../components/menu.jsx";
 import Logo from "../../images/logo.png";
 
 import { makeStyles } from "@material-ui/styles";
+import MainCard from "../../components/mainCard.jsx";
 
 const useStyles = makeStyles({
     navbar: {
@@ -37,6 +39,11 @@ const useStyles = makeStyles({
             background: "#a7a7a7",
             color: "#1b5a8fff",
         },
+    },
+    container: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 
@@ -204,6 +211,13 @@ const HomeScreen = () => {
                     </NavMenu>
                 </Box>
             </nav>
+            <Container
+                maxWidth="lg"
+                component="main"
+                className={classes.container}
+            >
+                <MainCard />
+            </Container>
         </>
     );
 };
