@@ -8,6 +8,7 @@ import {
     ListItemIcon,
     Badge,
     Container,
+    Grid,
 } from "@mui/material";
 import { FaBell } from "react-icons/fa";
 
@@ -16,6 +17,7 @@ import Logo from "../../images/logo.png";
 
 import { makeStyles } from "@material-ui/styles";
 import MainCard from "../../components/mainCard.jsx";
+import InfoCard from "../../components/infoCard.jsx";
 
 const useStyles = makeStyles({
     navbar: {
@@ -33,7 +35,6 @@ const useStyles = makeStyles({
         margin: "5px 20px",
         fontWeight: "bold",
         color: "#0e4d81",
-        padding: "10px 20px",
 
         "&:hover": {
             background: "#a7a7a7",
@@ -44,6 +45,9 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+    },
+    infoCardsDiv: {
+        marginTop: 50,
     },
 });
 
@@ -217,6 +221,11 @@ const HomeScreen = () => {
                 className={classes.container}
             >
                 <MainCard />
+                <Grid container className={classes.infoCardsDiv}>
+                    <Grid item>
+                        <InfoCard />
+                    </Grid>
+                </Grid>
             </Container>
         </>
     );
