@@ -18,6 +18,7 @@ import Logo from "../../images/logo.png";
 import { makeStyles } from "@material-ui/styles";
 import MainCard from "../../components/mainCard.jsx";
 import InfoCard from "../../components/infoCard.jsx";
+import ButtonAddCard from "../../components/buttonAddCard.jsx";
 
 const useStyles = makeStyles({
     navbar: {
@@ -48,6 +49,7 @@ const useStyles = makeStyles({
     },
     infoCardsDiv: {
         marginTop: 50,
+        alignItems: "center",
     },
 });
 
@@ -224,6 +226,15 @@ const HomeScreen = () => {
                 <Grid container className={classes.infoCardsDiv}>
                     <Grid item>
                         <InfoCard />
+                    </Grid>
+                    <Grid item>
+                        <InfoCard />
+                    </Grid>
+                    <Grid item>
+                        <InfoCard />
+                    </Grid>
+                    <Grid item>
+                        <ButtonAddCard full />
                     </Grid>
                 </Grid>
             </Container>

@@ -8,10 +8,10 @@ import Girassol from "../images/girassol.png";
 const useStyles = makeStyles({
     card: {
         width: "100%",
-        boxShadow: "1px 1px 3px #000000",
+        boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, .3)",
         borderRadius: "50px 50px 100px 50px",
         background:
-            "linear-gradient(145deg, rgba(0,93,228,1) 0%, rgba(111,128,208,1) 41%, rgba(255,208,173,1) 100%)",
+            "linear-gradient(145deg, #2954B3 0%, #8C8F93 60%, #a57f01 100%)",
         padding: "50px 30px 30px 30px",
     },
     title: {
