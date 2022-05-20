@@ -9,6 +9,10 @@ import {
     Badge,
     Container,
     Grid,
+    Typography,
+    FormControl,
+    InputLabel,
+    Select,
 } from "@mui/material";
 import { FaBell } from "react-icons/fa";
 
@@ -19,6 +23,7 @@ import { makeStyles } from "@material-ui/styles";
 import MainCard from "../../components/mainCard.jsx";
 import InfoCard from "../../components/infoCard.jsx";
 import ButtonAddCard from "../../components/buttonAddCard.jsx";
+import ChartArea from "../../components/chartArea.jsx";
 
 const useStyles = makeStyles({
     navbar: {
@@ -46,6 +51,7 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: 100,
     },
     infoCardsDiv: {
         marginTop: 50,
@@ -217,27 +223,26 @@ const HomeScreen = () => {
                     </NavMenu>
                 </Box>
             </nav>
-            <Container
-                maxWidth="lg"
-                component="main"
-                className={classes.container}
-            >
-                <MainCard />
-                <Grid container className={classes.infoCardsDiv}>
-                    <Grid item>
-                        <InfoCard />
+            <main>
+                <Container maxWidth="lg" className={classes.container}>
+                    <MainCard />
+                    <Grid container className={classes.infoCardsDiv}>
+                        <Grid item>
+                            <InfoCard />
+                        </Grid>
+                        <Grid item>
+                            <InfoCard />
+                        </Grid>
+                        <Grid item>
+                            <InfoCard />
+                        </Grid>
+                        <Grid item>
+                            <ButtonAddCard full />
+                        </Grid>
                     </Grid>
-                    <Grid item>
-                        <InfoCard />
-                    </Grid>
-                    <Grid item>
-                        <InfoCard />
-                    </Grid>
-                    <Grid item>
-                        <ButtonAddCard full />
-                    </Grid>
-                </Grid>
-            </Container>
+                    <ChartArea />
+                </Container>
+            </main>
         </>
     );
 };
