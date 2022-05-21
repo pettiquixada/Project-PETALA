@@ -4,7 +4,7 @@ import { Button, CardContent, IconButton, Typography } from "@mui/material";
 
 import { makeStyles } from "@material-ui/styles";
 
-import { FaPlus } from "react-icons/fa";
+import { IoAddCircle } from "react-icons/io5";
 
 const useStyles = makeStyles({
     card: {
@@ -31,28 +31,17 @@ const useStyles = makeStyles({
             transition: "1s",
         },
     },
-    buttonIcon: {
-        color: "#fcb61f",
-        fontSize: 30,
-        transition: "1s",
+    icon: {
+        color: "#069b38",
     },
 });
 
 const ButtonAddCard = ({ full }) => {
     const classes = useStyles();
     return (
-        <button
-            className={classes.card}
-            style={{
-                width: full ? 50 + "px" : 100 + "px",
-                height: full ? 50 + "px" : 100 + "px",
-            }}
-        >
-            <FaPlus
-                className={classes.buttonIcon}
-                style={{ fontSize: full ? 30 + "px" : 50 + "px" }}
-            />
-        </button>
+        <IconButton aria-label="add" size="large">
+            <IoAddCircle fontSize="80" className={classes.icon} />
+        </IconButton>
     );
 };
 

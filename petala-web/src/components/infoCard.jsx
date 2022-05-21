@@ -4,7 +4,8 @@ import { CardContent, IconButton, Typography } from "@mui/material";
 
 import { makeStyles } from "@material-ui/styles";
 
-import { FaSnowflake, FaEllipsisH } from "react-icons/fa";
+import { FaEllipsisH } from "react-icons/fa";
+import { IoFlowerOutline } from "react-icons/io5";
 
 const useStyles = makeStyles({
     card: {
@@ -75,7 +76,7 @@ const InfoCard = () => {
         <div className={classes.card}>
             <CardContent>
                 <div className={classes.cardTop}>
-                    <FaSnowflake className={classes.cardIcon} />
+                    <IoFlowerOutline className={classes.cardIcon} />
                     <IconButton
                         color="primary"
                         aria-label="upload picture"

@@ -1,33 +1,82 @@
 import React from "react";
-import { Box, Grid, Button, Typography } from "@mui/material";
+import {
+    Box,
+    Grid,
+    TextField,
+    Typography,
+    Input,
+    Button,
+    InputAdornment,
+} from "@mui/material";
 
 import { makeStyles } from "@material-ui/styles";
+import { IoHardwareChipOutline, IoAddCircleSharp } from "react-icons/io5";
+import { styled } from "@mui/material/styles";
 
-import Girassol from "../images/girassol.png";
+import GirlWithFlower from "../images/girlFlower.svg";
+import SvgGirlv from "../svg/girlFlower";
+
+const CustomButtom = styled(Button)({
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    padding: "6px 12px",
+    border: "1px solid",
+    lineHeight: 1.5,
+    backgroundColor: "#00a048",
+    borderColor: "#00a048",
+    fontFamily: [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+    ].join(","),
+    "&:hover": {
+        backgroundColor: "#007434",
+        borderColor: "#007434",
+        boxShadow: "none",
+    },
+    "&:active": {
+        boxShadow: "none",
+        backgroundColor: "#007434",
+        borderColor: "#007434",
+    },
+    "&:focus": {
+        boxShadow: "0 0 0 0.2rem rgba(0, 255, 55, 0.5)",
+    },
+});
 
 const useStyles = makeStyles({
     card: {
         width: "100%",
-        boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, .3)",
-        borderRadius: "50px 50px 100px 50px",
-        background:
-            "linear-gradient(145deg, #2954B3 0%, #8C8F93 60%, #a57f01 100%)",
-        padding: "50px 30px 30px 30px",
+        // boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, .3)",
+        // borderRadius: 20,
+        background: "#ffffff",
+        padding: "0px 30px",
     },
     title: {
-        color: "#ffffff",
-        fontWeight: "bolder",
+        color: "#333333",
+        fontSize: 50,
+        fontWeight: "bold",
+        fontFamily: "roboto",
     },
     subTitle: {
-        color: "#ffffff",
+        color: "#636363",
         fontSize: 16,
-        marginTop: 50,
     },
     ButtonDiv: {
         marginTop: 30,
     },
     inputDiv: {
         marginTop: 30,
+        display: "flex",
+        alignItems: "center",
     },
     inputCard: {
         width: 450,
@@ -68,14 +117,8 @@ const MainCard = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Grid item md="7">
-                    <Typography
-                        variant="h1"
-                        component="h2"
-                        className={classes.title}
-                    >
-                        Bem-vindos ao Pétala
-                    </Typography>
+                <Grid item md="6">
+                    <h1 className={classes.title}>Bem-vindos ao Pétala</h1>
                     <Typography variant="p" className={classes.subTitle}>
                         Projeto desenvolvido pelo o PET-TI do campus Quixadá e
                         elaborado pelo grupo de estudo de IOT. O Petálas foi
@@ -83,17 +126,33 @@ const MainCard = () => {
                         para as plantas.
                     </Typography>
                     <div className={classes.inputDiv}>
-                        <input
-                            className={classes.inputCard}
-                            placeholder="Digite o IP da sua placa..."
+                        <TextField
+                            id="input-with-icon-textfield"
+                            label="IP do Hardware"
+                            sx={{ width: "60%" }}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <IoHardwareChipOutline />
+                                    </InputAdornment>
+                                ),
+                            }}
+                            variant="standard"
                         />
-                        <button className={classes.buttonCard}>
+                        <CustomButtom variant="contained" size="medium">
                             Adicionar
-                        </button>
+                        </CustomButtom>
                     </div>
                 </Grid>
-                <Grid item md="5">
-                    <img src={Girassol} alt="Girassol" />
+                <Grid
+                    item
+                    md="6"
+                    sx={{ p: 2 }}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                >
+                    {/* <img src={GirlWithFlower} alt="GirlWithFlower" /> */}
+                    <SvgGirlv width={"auto"} height={350} />
                 </Grid>
             </Grid>
         </Box>

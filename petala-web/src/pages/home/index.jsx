@@ -28,9 +28,12 @@ import ChartArea from "../../components/chartArea.jsx";
 const useStyles = makeStyles({
     navbar: {
         border: 0,
-        padding: "30px 50px",
+        padding: "10px 50px",
+        marginBottom: 10,
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
+        boxShadow: "1px 1px 5px 2px rgba(0, 0, 0, 0.3)",
     },
     logo: {
         width: "18rem",
@@ -54,7 +57,7 @@ const useStyles = makeStyles({
         marginBottom: 100,
     },
     infoCardsDiv: {
-        marginTop: 50,
+        margin: "10px 0px",
         alignItems: "center",
     },
 });

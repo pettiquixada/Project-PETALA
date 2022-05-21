@@ -1,19 +1,10 @@
 import React from "react";
-import {
-    Box,
-    Avatar,
-    Menu,
-    MenuItem,
-    Divider,
-    Button,
-    Typography,
-    Tooltip,
-    Grid,
-} from "@mui/material";
+import { Menu } from "@mui/material";
 import { FaBell } from "react-icons/fa";
 
 const NavMenu = ({ id, openMenu, closeMenu, children }) => {
     const open = Boolean(openMenu);
+
     return (
         <>
             <Menu
