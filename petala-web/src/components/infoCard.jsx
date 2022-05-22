@@ -4,12 +4,11 @@ import { CardContent, IconButton, Typography } from "@mui/material";
 
 import { makeStyles } from "@material-ui/styles";
 
-import { FaEllipsisH } from "react-icons/fa";
-import { IoFlowerOutline } from "react-icons/io5";
+import { IoFlowerOutline, IoEllipsisHorizontal } from "react-icons/io5";
 
 const useStyles = makeStyles({
     card: {
-        background: "linear-gradient(90deg, #eba308 0%, #fcb61f 100%)",
+        background: "linear-gradient(90deg, #eba308 0%, #fcbd36 100%)",
         maxWidth: 300,
         maxHeight: 350,
         padding: "20px 10px 10px 10px",
@@ -23,7 +22,7 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        marginBottom: 40,
+        marginBottom: 20,
     },
     cardIcon: {
         color: "#ffffff",
@@ -31,7 +30,7 @@ const useStyles = makeStyles({
     },
     dotsIcon: {
         color: "#ffffff",
-        fontSize: 30,
+        fontSize: 40,
     },
     cardTitle: {
         color: "#ffffff",
@@ -81,7 +80,7 @@ const InfoCard = () => {
                         aria-label="upload picture"
                         component="span"
                     >
-                        <FaEllipsisH className={classes.dotsIcon} />
+                        <IoEllipsisHorizontal className={classes.dotsIcon} />
                     </IconButton>
                 </div>
 

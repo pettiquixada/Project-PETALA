@@ -6,8 +6,8 @@ import {
     Tooltip,
     Legend,
     ResponsiveContainer,
-    BarChart,
-    Bar,
+    LineChart,
+    Line,
 } from "recharts";
 
 import { makeStyles } from "@material-ui/styles";
@@ -67,13 +67,13 @@ const data = [
     },
 ];
 
-export default class CustomBarChart extends PureComponent {
+export default class CustomLineChart extends PureComponent {
     static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
 
     render() {
         return (
             <ResponsiveContainer width={"100%"} height={350}>
-                <BarChart
+                <LineChart
                     data={data}
                     margin={{
                         top: 5,
@@ -87,13 +87,15 @@ export default class CustomBarChart extends PureComponent {
                     <YAxis />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend />
-                    <Bar
+                    <Line
+                        type="monotone"
                         dataKey="volume"
-                        unit="ml"
+                        unit="L"
                         name="volume"
-                        fill="#c51d07"
+                        stroke="#003f92"
+                        activeDot={{ r: 8 }}
                     />
-                </BarChart>
+                </LineChart>
             </ResponsiveContainer>
         );
     }

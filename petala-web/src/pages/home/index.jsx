@@ -19,7 +19,8 @@ import { makeStyles } from "@material-ui/styles";
 import MainCard from "../../components/mainCard.jsx";
 import InfoCard from "../../components/infoCard.jsx";
 import ButtonAddCard from "../../components/buttonAddCard.jsx";
-import ChartArea from "../../components/chartArea.jsx";
+import GroundChartArea from "../../components/groundChartArea.jsx";
+import WaterChartArea from "../../components/waterChartArea.jsx";
 
 import board from "../../svg/board.svg";
 import blob from "../../svg/blob.svg";
@@ -54,7 +55,7 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginBottom: 100,
+        // marginBottom: 100,
         flexDirection: "column",
     },
     cards: {
@@ -69,7 +70,6 @@ const useStyles = makeStyles({
         backgroundPositionX: "-380px",
     },
     infoCardsDiv: {
-        alignItems: "center",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -280,7 +280,8 @@ const HomeScreen = () => {
                                 </Grid>
                             </div>
                         </Grid>
-                        <ChartArea />
+                        <GroundChartArea />
+                        <WaterChartArea />
                     </div>
                 </main>
             </div>

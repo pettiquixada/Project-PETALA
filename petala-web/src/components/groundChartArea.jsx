@@ -11,7 +11,7 @@ import {
 import { makeStyles } from "@material-ui/styles";
 import CustomBarChart from "./barChart";
 
-import { IoNotifications, IoFlower } from "react-icons/io5";
+import { IoBarChart } from "react-icons/io5";
 
 import blob from "../svg/blob.svg";
 
@@ -46,10 +46,17 @@ const useStyles = makeStyles({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 30,
+        boxShadow: "2px 2px 5px 1px rgba(0, 0, 0, 0.3)",
+    },
+    backForm: {
+        backgroundColor: "#ffffff",
+        borderRadius: 3,
+        marginBottom: 10,
+        boxShadow: "2px 2px 5px 1px rgba(0, 0, 0, 0.3)",
     },
 });
 
-const ChartArea = () => {
+const GroundChartArea = () => {
     const [groundChartInterval, setGroundChartInterval] = useState("day");
 
     const handleChange = (event) => {
@@ -62,12 +69,27 @@ const ChartArea = () => {
         <div className={classes.container}>
             <div className={classes.header}>
                 <Typography variant="p" className={classes.sectionTitle}>
-                    <IoFlower style={{ marginRight: 5 }} />
+                    <IoBarChart style={{ marginRight: 5 }} />
                     Gráfico de Umidade do Solo
                 </Typography>
-                <div>
-                    <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                        <InputLabel id="ground-chart-interval">
+                <div className={classes.backForm}>
+                    <FormControl
+                        variant="filled"
+                        size="large"
+                        sx={{
+                            m: 1,
+                            minWidth: 180,
+                        }}
+                        color="success"
+                    >
+                        <InputLabel
+                            id="ground-chart-interval"
+                            sx={{
+                                fontSize: 18,
+                                fontWeight: "bold",
+                                mb: 2,
+                            }}
+                        >
                             Período
                         </InputLabel>
                         <Select
@@ -77,9 +99,21 @@ const ChartArea = () => {
                             onChange={handleChange}
                             defaultValue={groundChartInterval}
                         >
-                            <MenuItem value={"day"}>Diário</MenuItem>
-                            <MenuItem value={"month"}>Mensal</MenuItem>
-                            <MenuItem value={"year"}>Anual</MenuItem>
+                            <MenuItem value={"day"} sx={{ fontWeight: "bold" }}>
+                                Diário
+                            </MenuItem>
+                            <MenuItem
+                                value={"month"}
+                                sx={{ fontWeight: "bold" }}
+                            >
+                                Mensal
+                            </MenuItem>
+                            <MenuItem
+                                value={"year"}
+                                sx={{ fontWeight: "bold" }}
+                            >
+                                Anual
+                            </MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -91,4 +125,4 @@ const ChartArea = () => {
     );
 };
 
-export default ChartArea;
+export default GroundChartArea;
