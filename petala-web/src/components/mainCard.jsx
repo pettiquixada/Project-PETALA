@@ -13,7 +13,6 @@ import { makeStyles } from "@material-ui/styles";
 import { IoHardwareChipOutline, IoAddCircleSharp } from "react-icons/io5";
 import { styled } from "@mui/material/styles";
 
-import GirlWithFlower from "../images/girlFlower.svg";
 import SvgGirlv from "../svg/girlFlower";
 
 const CustomButtom = styled(Button)({
@@ -55,18 +54,21 @@ const CustomButtom = styled(Button)({
 const useStyles = makeStyles({
     card: {
         width: "100%",
-        // boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, .3)",
-        // borderRadius: 20,
-        background: "#ffffff",
-        padding: "0px 30px",
+        boxShadow: "0px 5px 5px 1px rgba(0, 0, 0, 0.3)",
+        padding: "0px 100px 20px 100px",
+        backgroundColor: "#ffffff",
     },
     title: {
-        color: "#333333",
-        fontSize: 50,
+        color: "#1d9e3d",
+        fontSize: 60,
         fontWeight: "bold",
         fontFamily: "roboto",
+        lineHeight: 1,
+        textTransform: "uppercase",
+        marginBottom: 15,
     },
     subTitle: {
+        marginTop: 0,
         color: "#636363",
         fontSize: 16,
     },
@@ -110,7 +112,7 @@ const useStyles = makeStyles({
 const MainCard = () => {
     const classes = useStyles();
     return (
-        <Box component="div" className={classes.card}>
+        <Box component="section" className={classes.card}>
             <Grid
                 container
                 direction="row"
@@ -129,7 +131,7 @@ const MainCard = () => {
                         <TextField
                             id="input-with-icon-textfield"
                             label="IP do Hardware"
-                            sx={{ width: "60%" }}
+                            sx={{ width: "60%", mr: 1 }}
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -138,6 +140,7 @@ const MainCard = () => {
                                 ),
                             }}
                             variant="standard"
+                            color="success"
                         />
                         <CustomButtom variant="contained" size="medium">
                             Adicionar
@@ -151,7 +154,6 @@ const MainCard = () => {
                     justifyContent={"center"}
                     alignItems={"center"}
                 >
-                    {/* <img src={GirlWithFlower} alt="GirlWithFlower" /> */}
                     <SvgGirlv width={"auto"} height={350} />
                 </Grid>
             </Grid>

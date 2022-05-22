@@ -9,7 +9,7 @@ import { IoAddCircle } from "react-icons/io5";
 const useStyles = makeStyles({
     card: {
         backgroundColor: "#eeeeee",
-        boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, .3)",
+        boxShadow: "1px 2px 5px 2px rgba(0, 0, 0, 0.3)",
         minWidth: 80,
         minHeight: 80,
         maxHeight: 350,
@@ -32,7 +32,15 @@ const useStyles = makeStyles({
         },
     },
     icon: {
-        color: "#069b38",
+        color: "#ffffff",
+        boxShadow: "1px 2px 5px 1px rgba(0, 0, 0, 0.5)",
+        borderRadius: "50%",
+        transition: "0.2s",
+
+        "&:hover": {
+            color: "#dddddd",
+            transition: "0.2s",
+        },
     },
 });
 
@@ -40,7 +48,11 @@ const ButtonAddCard = ({ full }) => {
     const classes = useStyles();
     return (
         <IconButton aria-label="add" size="large">
-            <IoAddCircle fontSize="80" className={classes.icon} />
+            <IoAddCircle
+                fontSize="80"
+                className={classes.icon}
+                style={{ color: full ? "#007434" : "#ffffff" }}
+            />
         </IconButton>
     );
 };

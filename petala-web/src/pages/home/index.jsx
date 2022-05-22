@@ -7,14 +7,10 @@ import {
     Tooltip,
     ListItemIcon,
     Badge,
-    Container,
     Grid,
     Typography,
-    FormControl,
-    InputLabel,
-    Select,
 } from "@mui/material";
-import { FaBell } from "react-icons/fa";
+import { IoNotifications, IoFlower } from "react-icons/io5";
 
 import NavMenu from "../../components/menu.jsx";
 import Logo from "../../images/logo.png";
@@ -25,6 +21,9 @@ import InfoCard from "../../components/infoCard.jsx";
 import ButtonAddCard from "../../components/buttonAddCard.jsx";
 import ChartArea from "../../components/chartArea.jsx";
 
+import board from "../../svg/board.svg";
+import blob from "../../svg/blob.svg";
+
 const useStyles = makeStyles({
     navbar: {
         border: 0,
@@ -33,7 +32,8 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: "1px 1px 5px 2px rgba(0, 0, 0, 0.3)",
+        boxShadow: "0px 2px 5px 1px rgba(0, 0, 0, 0.3)",
+        backgroundColor: "#ffffff",
     },
     logo: {
         width: "18rem",
@@ -55,10 +55,33 @@ const useStyles = makeStyles({
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 100,
+        flexDirection: "column",
+    },
+    cards: {
+        width: "100%",
+        backgroundColor: "#ffffff",
+        boxShadow: "0px 5px 5px 1px rgba(0, 0, 0, 0.3)",
+        margin: "20px 0px",
+        padding: "40px 50px 0px 50px",
+        backgroundImage: `url(${blob})`,
+        backgroundSize: "cover",
+        backgroundPositionY: "-530px",
+        backgroundPositionX: "-380px",
     },
     infoCardsDiv: {
-        margin: "10px 0px",
         alignItems: "center",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+    },
+    wrapper: {
+        backgroundImage: `url(${board})`,
+    },
+    sectionTitle: {
+        fontWeight: "bold",
+        fontSize: 30,
+        color: "#ffffff",
     },
 });
 
@@ -95,157 +118,172 @@ const HomeScreen = () => {
 
     return (
         <>
-            <nav className={classes.navbar}>
-                <Tooltip title="Logo Pétala">
-                    <img src={Logo} alt="Logo" className={classes.logo} />
-                </Tooltip>
+            <div className={classes.wrapper}>
+                <nav className={classes.navbar}>
+                    <Tooltip title="Logo Pétala">
+                        <img src={Logo} alt="Logo" className={classes.logo} />
+                    </Tooltip>
 
-                <Box
-                    sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        textAlign: "center",
-                    }}
-                    className={classes.gridAlign}
-                >
-                    <Tooltip title="Configurações de Sistema">
-                        <Button
-                            onClick={openSysMenu}
-                            size="large"
-                            sx={{ ml: 2 }}
-                            aria-controls={
-                                openSystemMenu ? "system-menu" : undefined
-                            }
-                            aria-haspopup="true"
-                            aria-expanded={openSystemMenu ? "true" : undefined}
-                            className={classes.menuButton}
-                        >
-                            Sistema
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title="Configurações Gerais">
-                        <Button
-                            onClick={openGenMenu}
-                            size="large"
-                            sx={{ ml: 2 }}
-                            aria-controls={
-                                openGeneralMenu ? "general-menu" : undefined
-                            }
-                            aria-haspopup="true"
-                            aria-expanded={openGeneralMenu ? "true" : undefined}
-                            className={classes.menuButton}
-                        >
-                            Geral
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title="Notificações do Usuário">
-                        <Button
-                            onClick={openNotMenu}
-                            size="large"
-                            sx={{ ml: 2 }}
-                            aria-controls={
-                                openNotificationMenu
-                                    ? "account-menu"
-                                    : undefined
-                            }
-                            aria-haspopup="true"
-                            aria-expanded={
-                                openNotificationMenu ? "true" : undefined
-                            }
-                            className={classes.menuButton}
-                            // startIcon={<FaBell />}
-                            // iconSizeSmall
-                        >
-                            <Badge
-                                badgeContent={4}
-                                color="primary"
-                                sx={{ mr: 2 }}
+                    <Box
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            textAlign: "center",
+                        }}
+                        className={classes.gridAlign}
+                    >
+                        <Tooltip title="Configurações de Sistema">
+                            <Button
+                                onClick={openSysMenu}
+                                size="large"
+                                sx={{ ml: 2 }}
+                                aria-controls={
+                                    openSystemMenu ? "system-menu" : undefined
+                                }
+                                aria-haspopup="true"
+                                aria-expanded={
+                                    openSystemMenu ? "true" : undefined
+                                }
+                                className={classes.menuButton}
                             >
-                                <FaBell fontSize={20} />
-                            </Badge>
-                            Notificações
-                        </Button>
-                    </Tooltip>
-                    <NavMenu
-                        id={"system-menu"}
-                        openMenu={openSystemMenu}
-                        closeMenu={closeSysMenu}
-                    >
-                        <MenuItem>
-                            <ListItemIcon>
-                                <FaBell />
-                            </ListItemIcon>
-                            Conexões do Circuito
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem>
-                            <ListItemIcon>
-                                <FaBell />
-                            </ListItemIcon>
-                            Controle Doves
-                        </MenuItem>
-                    </NavMenu>
+                                Sistema
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title="Configurações Gerais">
+                            <Button
+                                onClick={openGenMenu}
+                                size="large"
+                                sx={{ ml: 2 }}
+                                aria-controls={
+                                    openGeneralMenu ? "general-menu" : undefined
+                                }
+                                aria-haspopup="true"
+                                aria-expanded={
+                                    openGeneralMenu ? "true" : undefined
+                                }
+                                className={classes.menuButton}
+                            >
+                                Geral
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title="Notificações do Usuário">
+                            <Button
+                                onClick={openNotMenu}
+                                size="large"
+                                sx={{ ml: 2 }}
+                                aria-controls={
+                                    openNotificationMenu
+                                        ? "account-menu"
+                                        : undefined
+                                }
+                                aria-haspopup="true"
+                                aria-expanded={
+                                    openNotificationMenu ? "true" : undefined
+                                }
+                                className={classes.menuButton}
+                                // startIcon={<IoNotifications />}
+                                // iconSizeSmall
+                            >
+                                <Badge
+                                    badgeContent={4}
+                                    color="primary"
+                                    sx={{ mr: 2 }}
+                                >
+                                    <IoNotifications fontSize={25} />
+                                </Badge>
+                                Notificações
+                            </Button>
+                        </Tooltip>
+                        <NavMenu
+                            id={"system-menu"}
+                            openMenu={openSystemMenu}
+                            closeMenu={closeSysMenu}
+                        >
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <IoNotifications />
+                                </ListItemIcon>
+                                Conexões do Circuito
+                            </MenuItem>
+                            <Divider />
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <IoNotifications />
+                                </ListItemIcon>
+                                Controle Doves
+                            </MenuItem>
+                        </NavMenu>
 
-                    <NavMenu
-                        id={"general-menu"}
-                        openMenu={openGeneralMenu}
-                        closeMenu={closeGenMenu}
-                    >
-                        <MenuItem>
-                            <ListItemIcon>
-                                <FaBell />
-                            </ListItemIcon>
-                            Idiomas
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem>
-                            <ListItemIcon>
-                                <FaBell />
-                            </ListItemIcon>
-                            Backup e Restauração
-                        </MenuItem>
-                        <MenuItem>
-                            <ListItemIcon>
-                                <FaBell />
-                            </ListItemIcon>
-                            Versões e Update
-                        </MenuItem>
-                    </NavMenu>
+                        <NavMenu
+                            id={"general-menu"}
+                            openMenu={openGeneralMenu}
+                            closeMenu={closeGenMenu}
+                        >
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <IoNotifications />
+                                </ListItemIcon>
+                                Idiomas
+                            </MenuItem>
+                            <Divider />
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <IoNotifications />
+                                </ListItemIcon>
+                                Backup e Restauração
+                            </MenuItem>
+                            <MenuItem>
+                                <ListItemIcon>
+                                    <IoNotifications />
+                                </ListItemIcon>
+                                Versões e Update
+                            </MenuItem>
+                        </NavMenu>
 
-                    <NavMenu
-                        id={"notification-menu"}
-                        openMenu={openNotificationMenu}
-                        closeMenu={closeNotMenu}
-                    >
-                        <MenuItem>Mensagem 1</MenuItem>
-                        <Divider />
-                        <MenuItem>Mensagem 2</MenuItem>
-                        <Divider />
-                        <MenuItem>Mensagem 3</MenuItem>
-                    </NavMenu>
-                </Box>
-            </nav>
-            <main>
-                <Container maxWidth="lg" className={classes.container}>
-                    <MainCard />
-                    <Grid container className={classes.infoCardsDiv}>
-                        <Grid item>
-                            <InfoCard />
+                        <NavMenu
+                            id={"notification-menu"}
+                            openMenu={openNotificationMenu}
+                            closeMenu={closeNotMenu}
+                        >
+                            <MenuItem>Mensagem 1</MenuItem>
+                            <Divider />
+                            <MenuItem>Mensagem 2</MenuItem>
+                            <Divider />
+                            <MenuItem>Mensagem 3</MenuItem>
+                        </NavMenu>
+                    </Box>
+                </nav>
+                <main>
+                    <div className={classes.container}>
+                        <MainCard />
+                        <Grid container className={classes.cards}>
+                            <Typography
+                                variant="p"
+                                className={classes.sectionTitle}
+                            >
+                                <IoFlower style={{ marginRight: 5 }} />
+                                Plantações a Monitorar
+                            </Typography>
+                            <div className={classes.infoCardsDiv}>
+                                <Grid item>
+                                    <InfoCard />
+                                </Grid>
+                                <Grid item>
+                                    <InfoCard />
+                                </Grid>
+                                <Grid item>
+                                    <InfoCard />
+                                </Grid>
+                                <Grid item>
+                                    <ButtonAddCard />
+                                </Grid>
+                            </div>
                         </Grid>
-                        <Grid item>
-                            <InfoCard />
-                        </Grid>
-                        <Grid item>
-                            <InfoCard />
-                        </Grid>
-                        <Grid item>
-                            <ButtonAddCard full />
-                        </Grid>
-                    </Grid>
-                    <ChartArea />
-                </Container>
-            </main>
+                        <ChartArea />
+                    </div>
+                </main>
+            </div>
         </>
     );
 };

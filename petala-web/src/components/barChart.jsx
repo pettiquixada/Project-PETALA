@@ -46,10 +46,8 @@ export default class CustomBarChart extends PureComponent {
 
     render() {
         return (
-            <ResponsiveContainer width={"100%"} height={300}>
+            <ResponsiveContainer width={"100%"} height={350}>
                 <BarChart
-                    width={500}
-                    height={300}
                     data={data}
                     margin={{
                         top: 5,
@@ -63,7 +61,7 @@ export default class CustomBarChart extends PureComponent {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="Diário" title fill="#0870a0" />
+                    <Bar dataKey="Diário" title fill="#c51d07" />
                 </BarChart>
             </ResponsiveContainer>
         );

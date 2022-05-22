@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 
 import {
-    Box,
     MenuItem,
-    Divider,
-    Button,
-    Tooltip,
-    ListItemIcon,
-    Badge,
-    Container,
-    Grid,
     Typography,
     FormControl,
     InputLabel,
@@ -19,21 +11,41 @@ import {
 import { makeStyles } from "@material-ui/styles";
 import CustomBarChart from "./barChart";
 
+import { IoNotifications, IoFlower } from "react-icons/io5";
+
+import blob from "../svg/blob.svg";
+
 const useStyles = makeStyles({
     container: {
-        padding: 20,
         width: "100%",
-        height: "auto",
-        backgroundColor: "#f3f3f3",
+        backgroundColor: "#ffffff",
+        boxShadow: "0px 5px 5px 1px rgba(0, 0, 0, 0.3)",
+        margin: "20px 0px",
+        padding: "40px 50px 0px 50px",
+        backgroundImage: `url(${blob})`,
+        backgroundSize: "cover",
+        backgroundPositionY: "-530px",
+        backgroundPositionX: "-380px",
     },
     header: {
-        padding: 20,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
     },
+    sectionTitle: {
+        fontWeight: "bold",
+        fontSize: 30,
+        color: "#ffffff",
+    },
     chart: {
         width: "100%",
+        backgroundColor: "#ffffff",
+        marginBottom: 20,
+        padding: "30px 30px 10px 0px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 30,
     },
 });
 
@@ -49,7 +61,10 @@ const ChartArea = () => {
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <Typography>Gráfico de Umidade do Solo</Typography>
+                <Typography variant="p" className={classes.sectionTitle}>
+                    <IoFlower style={{ marginRight: 5 }} />
+                    Gráfico de Umidade do Solo
+                </Typography>
                 <div>
                     <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
                         <InputLabel id="ground-chart-interval">

@@ -9,8 +9,7 @@ import { IoFlowerOutline } from "react-icons/io5";
 
 const useStyles = makeStyles({
     card: {
-        background:
-            "linear-gradient(90deg, #fcb61f 0%, rgba(255,206,79,1) 100%)",
+        background: "linear-gradient(90deg, #eba308 0%, #fcb61f 100%)",
         maxWidth: 300,
         maxHeight: 350,
         padding: "20px 10px 10px 10px",
