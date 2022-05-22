@@ -24,6 +24,7 @@ import WaterChartArea from "../../components/waterChartArea.jsx";
 
 import board from "../../svg/board.svg";
 import blob from "../../svg/blob.svg";
+import Footer from "../../components/footer.jsx";
 
 const useStyles = makeStyles({
     navbar: {
@@ -284,6 +285,7 @@ const HomeScreen = () => {
                         <WaterChartArea />
                     </div>
                 </main>
+                <Footer />
             </div>
         </>
     );
